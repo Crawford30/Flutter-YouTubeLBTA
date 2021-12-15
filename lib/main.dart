@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'views/video_cell.dart';
+import 'views/detail_page.dart';
 
 void main() {
   runApp(RealWorldApp());
@@ -121,60 +122,45 @@ class MyHttpOverrides extends HttpOverrides{
 }
 
 
-class VideoCell extends StatelessWidget{
-  //always when we extend a widget, we have to always provide a build method for the class
+// class VideoCell extends StatelessWidget{
+//   //always when we extend a widget, we have to always provide a build method for the class
+//
+//   final video;
+//
+//   //Constructor(Helps to initialize)
+//   VideoCell(this.video);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//
+//     return new Column(
+//       children: [
+//         new Container(
+//           padding: new EdgeInsets.all(16.0),
+//           child: new Column(
+//             crossAxisAlignment: CrossAxisAlignment.start,
+//             children: [
+//               new Image.network(video["imageUrl"]),
+//               new Container(height: 8.0,),
+//               new Text(video["name"],
+//                 style: new TextStyle(
+//                   fontSize: 16.0,
+//                   fontWeight: FontWeight.bold,
+//                 ),),
+//
+//             ],
+//           ),
+//         ),
+//
+//         new Divider()
+//       ],
+//     );
+//    // return new Text("This is a video..");
+//   }
+//
+//
+//
+//
+// }
 
-  final video;
 
-  //Constructor(Helps to initialize)
-  VideoCell(this.video);
-
-  @override
-  Widget build(BuildContext context) {
-
-    return new Column(
-      children: [
-        new Container(
-          padding: new EdgeInsets.all(16.0),
-          child: new Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              new Image.network(video["imageUrl"]),
-              new Container(height: 8.0,),
-              new Text(video["name"],
-                style: new TextStyle(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.bold,
-                ),),
-
-            ],
-          ),
-        ),
-
-        new Divider()
-      ],
-    );
-   // return new Text("This is a video..");
-  }
-
-
-
-
-}
-
-class DetailPage extends StatelessWidget {
-  const DetailPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("Detail Page"),
-      ),
-
-      body: new Center(
-        child: new Text("CENTERED"),
-      ),
-    );
-  }
-}
