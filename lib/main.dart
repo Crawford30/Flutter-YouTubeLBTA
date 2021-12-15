@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'views/video_cell.dart';
 
 void main() {
   runApp(RealWorldApp());
@@ -77,22 +78,9 @@ class _RealWorldAppState extends State<RealWorldApp> {
 
               final video = this.videos[i];
 
-              return new Column(
-                children: [
-                  new Container(
-                    padding: new EdgeInsets.all(16.0),
-                    child: new Column(
-                      children: [
-                            new Image.network(video["imageUrl"]),
-                            new Text(video["name"]),
+              return new VideoCell(video);
 
-                      ],
-                    ),
-                  ),
 
-                  new Divider()
-                ],
-              );
               //return new Text("ROW: ${i}");
               },
           ),
@@ -114,3 +102,45 @@ class MyHttpOverrides extends HttpOverrides{
       ..badCertificateCallback = (X509Certificate cert, String host, int port)=> true;
   }
 }
+
+
+// class VideoCell extends StatelessWidget{
+//   //always when we extend a widget, we have to always provide a build method for the class
+//
+//   final video;
+//
+//   //Constructor(Helps to initialize)
+//   VideoCell(this.video);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//
+//     return new Column(
+//       children: [
+//         new Container(
+//           padding: new EdgeInsets.all(16.0),
+//           child: new Column(
+//             crossAxisAlignment: CrossAxisAlignment.start,
+//             children: [
+//               new Image.network(video["imageUrl"]),
+//               new Container(height: 8.0,),
+//               new Text(video["name"],
+//                 style: new TextStyle(
+//                   fontSize: 16.0,
+//                   fontWeight: FontWeight.bold,
+//                 ),),
+//
+//             ],
+//           ),
+//         ),
+//
+//         new Divider()
+//       ],
+//     );
+//    // return new Text("This is a video..");
+//   }
+//
+//
+//
+//
+// }
