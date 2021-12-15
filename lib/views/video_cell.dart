@@ -6,7 +6,6 @@ class VideoCell extends StatelessWidget{
   //always when we extend a widget, we have to always provide a build method for the class
 
   final video;
-
   //Constructor(Helps to initialize)
   VideoCell(this.video);
 
@@ -27,7 +26,6 @@ class VideoCell extends StatelessWidget{
                   fontSize: 16.0,
                   fontWeight: FontWeight.bold,
                 ),),
-
             ],
           ),
         ),
